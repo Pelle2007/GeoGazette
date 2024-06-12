@@ -1,0 +1,156 @@
+/* Algemene opmaak voor alle elementen */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Body-opmaak */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Header-opmaak */
+  header {
+    background-color: rgb(53, 121, 97);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    height: 75px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Header h1-opmaak */
+  header h1 div:nth-child(1),
+  header h1 div span:nth-child(2) {
+    font-family: DIN Alternate, sans-serif;
+    font-size: 18vw;
+    color: white;
+    text-decoration: none;
+    padding-left: 25px;
+  }
+  
+  /* Main-opmaak */
+  main {
+    background-color: white;
+    padding: 100px 20px 20px 20px; /* Wat extra padding toegevoegd aan de onderkant */
+  }
+  
+  /* Opmaak voor het antwoordvakje */
+  .answer-box {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .answer-box p {
+    margin: 10px 0; /* Kleinere marge tussen alinea's binnen het antwoordvakje */
+  }
+
+/* Footer-opmaak */
+footer {
+    background-color: rgb(53, 121, 97);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    padding: 2rem 1rem; /* Voeg wat witruimte toe tussen de rand van het scherm en de elementen */
+    color: white; /* Tekstkleur wit maken voor contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* Ruimte tussen de secties toevoegen */
+  }
+  
+  footer a {
+    color: white; /* Linkkleur wit maken voor contrast */
+    text-decoration: none; /* Onderstreping van links verwijderen */
+  }
+  
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .socials a img {
+    width: 40px; /* Iets grotere afmetingen voor de sociale pictogrammen */
+    height: auto; /* Hoogte automatisch aanpassen om de verhoudingen te behouden */
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0; /* Verwijder standaard opvulling van de lijsten */
+    margin: 0; /* Verwijder standaard marges van de lijsten */
+  }
+  
+  footer a:hover {
+    text-decoration: underline; /* Onderstreping toevoegen bij hover */
+    opacity: 0.8; /* Maak de koppeling iets doorschijnend bij hover */
+  }
+  
+  .footer-section {
+    text-align: center; /* Center de inhoud van de sectie */
+  }
+  
+  /* Stijlen voor de donkere modusknop */
+.darkButton {
+    margin-top: 2px;
+    margin-right: 23px;
+    background-color: transparent;
+    border: none;
+    transition: filter 0.5s; /* Overgangseffect voor de knop */
+  }
+  
+  .darkButton img {
+    width: 30px; /* Aanpassen naar gewenste grootte */
+    height: auto; /* Behoud aspect ratio */
+  }
+  
+  /* Stijlen voor de donkere modusknop in donkere modus */
+  .dark-mode .darkButton img {
+    filter: invert(1); /* Omkeren van kleuren voor donkere modus */
+  }
+  
+  /*LAYOUT MOBIEL & STANDAARD OPMAAK*/
+main{ /*Michiel: dubbele selector! -> verplaats inhoud naar andere main selector */
+    /*padding: var(--spacing-s); /*Michiel: verwijderen -> let op met copy/past deze variabele bestaat niet in jouw code*/
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem; /*Michiel: toegevoegd -> ruimte tussen grid items */
+  }
+  
+  p{
+    margin-bottom: 1rem;
+  }
+  
+  /*OVERSCHRIJVEN LAYOUT TABLET*/
+  @media (min-width: 768px) {
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+  }
+  
+  /*OVERSCHRIJVEN LAYOUT LAPTOP*/
+  @media (min-width: 1024px) {
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+  }
+  
+  /*OVERSCHRIJVEN LAYOUT DESKTOP*/
+  @media (min-width: 1280px) {
+    main{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+  }
+
+

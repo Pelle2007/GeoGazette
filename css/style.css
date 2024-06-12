@@ -1,0 +1,419 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Michiel: verplaatst, logische volgorde elementen + groeperen */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*end*/
+
+body main article {
+  font-family: helvetica, light, sans-serif;
+  font-size: 4vw;
+}
+
+body main h1 {
+  font-size: 6vw;
+}
+
+header {
+  background-color: rgb(53, 121, 97);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  height: 75px;
+  /*Michiel vraag 1: start toegevoegd*/
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  /*end*/
+}
+
+header h1 div:nth-child(1) {
+  border-top: 8px solid white;
+  font-family: DIN Alternate, sans-serif;
+  font-size: 18vw;
+  color: white;
+  width: fit-content;
+  text-decoration: none;
+  padding-left: 25px;
+}
+
+header h1 div span:nth-child(2) {
+  font-family: DIN Alternate, sans-serif;
+  font-size: 18vw;
+  color: white;
+  text-decoration: none;
+  padding-left: 25px;
+}
+
+header h1 div {
+  display: flex;
+  padding-left: 25px;
+}
+
+header h1 div span {
+  flex: 1;
+  padding-left: 25px;
+}
+
+main {
+  background-color: white;
+  /*height: 500px; Michiel: verwijderen -> vermijd om vaste hoogtes aan elementen geven, dit is niet nodig en levert vaak problemen op*/
+  padding: 100px 1rem 2rem 1rem; /*Michiel vraag 1: toegevoegd ifv fixed header + witruimte tussen schermrand en inhoud + */
+}
+
+/*Michiel vraag 1: toegevoegd*/
+img{
+  display: block;
+  max-width: 100%;
+}
+/*end*/
+
+.line {
+  border-top: 8px solid white;
+}
+
+.navbar {
+  overflow: hidden;
+}
+  
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+  
+.dropdown {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  height: 100%; /*Michiel vraag 1: toegevoegd om iconen (hamburgen/darkmode) te centreren */
+}
+  
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  z-index: 2;
+  margin-top: 4px;
+  margin-left: 10px;
+  transition: transform 0.25s; /*toevoegen effect op draaibeweging knop */
+}
+
+/*verwijderen start
+.dropdown .dropbtn:hover {
+  transform: rotate(90deg);
+}
+end*/
+  
+.dropdown-content {
+  position: absolute;
+  background-color: rgb(53, 121, 97);
+  min-width: 100%;
+  left:0;
+  right:0;
+  /*top: -100%; /*Michiel vraag 1: werkt niet bij position fixed op header */
+  transform: translateY(-100%); /*Michiel vraag 1: toegevoegd alternatief voor top: -100% */
+  z-index: 1;
+  /*max-height: 0;*/
+  transition: transform 0.5s; /*Michiel vraag 1: transition op transform ipv top */
+  pointer-events: none;
+  overflow: hidden;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  padding-top: 4rem;
+  padding: 1rem;
+}
+
+.dropdown.open .dropdown-content{
+  /*top: 0; /*Michiel vraag 1: werkt niet bij position fixed op header */
+  transform: translateY(0); /*Michiel vraag 1: toegevoegd alternatief voor top: 0 */
+}
+
+.dropdown.open .dropbtn {
+  transform: rotate(90deg);
+}
+  
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+  
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+  
+/*verwijderen start
+.dropbtn:hover + .dropdown-content {
+  /*max-height: 500px;* /
+  top: 0;
+}
+end*/
+
+.darkButton {
+  margin-top: 2px;
+  margin-right: 23px;
+  background-color: transparent;
+  border: none;
+}
+/*Michiel: verplaatst -> logische volgorde, groeperen selectoren*/
+
+footer {
+  background-color: rgb(53, 121, 97);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 2rem 1rem; /* Voeg wat witruimte toe tussen de rand van het scherm en de elementen */
+  color: white; /* Tekstkleur wit maken voor contrast */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* Ruimte tussen de secties toevoegen */
+}
+
+footer a {
+  color: white; /* Linkkleur wit maken voor contrast */
+  text-decoration: none; /* Onderstreping van links verwijderen */
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.socials a img {
+  width: 40px; /* Iets grotere afmetingen voor de sociale pictogrammen */
+  height: auto; /* Hoogte automatisch aanpassen om de verhoudingen te behouden */
+}
+
+footer ul {
+  list-style: none;
+  padding: 0; /* Verwijder standaard opvulling van de lijsten */
+  margin: 0; /* Verwijder standaard marges van de lijsten */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Onderstreping toevoegen bij hover */
+  opacity: 0.8; /* Maak de koppeling iets doorschijnend bij hover */
+}
+
+.footer-section {
+  text-align: center; /* Center de inhoud van de sectie */
+}
+
+.searchbar {
+  margin: auto;
+  margin-left: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  padding: 10px;
+  border-radius: 40px;
+}
+
+header p { /*Michiel: verplaats naar andere header selectoren */
+  color: white;
+  margin-top: 50px;
+  font-size: 40px;
+}
+
+.button-container {
+  text-align: center; /* Center the button in the div */
+  margin-top: 20px; /* Add some top margin */
+}
+
+.image-button {
+  position: relative; /* Needed to position the text over the image */
+  display: inline-block; /* Make the link an inline-block element */
+  text-decoration: none; /* Remove underline from link */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.image-button img {
+  display: block; /* Remove bottom space from inline images */
+  width: 300px; /* Make image take the full width of its container */
+  height: 200px;
+}
+
+.button-text {
+  position: absolute; /* Position the text over the image */
+  bottom: 10px; /* Position from the bottom */
+  left: 10px; /* Position from the left */
+  color: white; /* Text color */
+  font-size: 16px; /* Text size */
+  font-family: "Baskerville", sans-serif; /* Font style */
+  line-height: 1.5; /* Line height */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* x-offset, y-offset, blur-radius, kleur */
+}
+
+.box-link {
+  display: inline-block; /* Make the link an inline-block element */
+  position: relative; /* Needed to position the text over the box */
+  text-decoration: none; /* Remove underline from link */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.box {
+  width: 300px; /* Width of the box */
+  height: 200px; /* Height of the box */
+  background-color: transparent; /* Background color of the box */
+  border: 2px solid #000; /* Border of the box */
+  position: relative; /* Needed to position the text inside the box */
+}
+
+.box .button-text {
+  position: absolute; /* Position the text inside the box */
+  bottom: 10px; /* Position from the bottom */
+  left: 10px; /* Position from the left */
+  color: black; /* Text color */
+  font-size: 16px; /* Text size */
+  font-family: "Baskerville", sans-serif; /* Font style */
+  line-height: 1.5; /* Line height */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* x-offset, y-offset, blur-radius, kleur */
+}
+
+body, header, footer, header a, footer a, .dropdown-content, .button-container {
+  transition: background-color 0.5s, color 0.5s; /* Overgangseffect voor achtergrondkleur en tekstkleur */
+}
+
+/* Overgangseffect voor donkere modusknop */
+.darkButton {
+  transition: filter 0.5s; /* Overgangseffect toevoegen voor de knop */
+}
+
+/* Overgang voor de donkere modusknop */
+.darkButton img {
+  filter: invert(0); /* Oorspronkelijke kleuren */
+}
+
+/* Overgang voor de donkere modusknop in donkere modus */
+.dark-mode .darkButton img {
+  filter: invert(1); /* Omkeren van kleuren voor donkere modus */
+}
+
+/* CSS voor light mode (standaard) */
+body {
+  background-color: white; /* Standaard achtergrondkleur */
+  color: black; /* Standaard tekstkleur */
+}
+
+header {
+  background-color: rgb(53, 121, 97); /* Standaard achtergrondkleur */
+}
+
+footer {
+  background-color: rgb(53, 121, 97); /* Standaard achtergrondkleur */
+}
+
+header a,
+footer a {
+  color: white; /* Standaard tekstkleur */
+}
+
+.dropdown-content {
+  background-color: rgb(53, 121, 97); /* Standaard achtergrondkleur */
+}
+
+.button-container {
+  background-color: white; /* Standaard achtergrondkleur */
+}
+
+/* CSS voor donkere modus */
+.dark-mode body {
+  background-color: #1a1a1a; /* Donkere achtergrondkleur */
+  color: white; /* Witte tekstkleur voor contrast */
+}
+
+.dark-mode header {
+  background-color: #18382C; /* Donkere achtergrondkleur */
+}
+
+.dark-mode footer {
+  background-color: #18382C; /* Donkere achtergrondkleur */
+}
+
+.dark-mode header a,
+.dark-mode footer a {
+  color: white; /* Witte tekstkleur voor contrast */
+}
+
+.dark-mode .dropdown-content {
+  background-color: #18382C; /* Donkere achtergrondkleur */
+}
+
+/* Stijlen voor de dark mode-knop */
+.darkButton {
+  margin-top: 2px;
+  margin-right: 23px;
+  background-color: transparent;
+  border: none;
+}
+
+.darkButton img {
+  width: 30px; /* Aanpassen naar gewenste grootte */
+  height: auto; /* Behoud aspect ratio */
+}
+
+
+
+
+
+
+
+
+
+
+/*LAYOUT MOBIEL & STANDAARD OPMAAK*/
+main{ /*Michiel: dubbele selector! -> verplaats inhoud naar andere main selector */
+  /*padding: var(--spacing-s); /*Michiel: verwijderen -> let op met copy/past deze variabele bestaat niet in jouw code*/
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem; /*Michiel: toegevoegd -> ruimte tussen grid items */
+}
+
+p{
+  margin-bottom: 1rem;
+}
+
+/*OVERSCHRIJVEN LAYOUT TABLET*/
+@media (min-width: 768px) {
+  main{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+  }
+}
+
+/*OVERSCHRIJVEN LAYOUT LAPTOP*/
+@media (min-width: 1024px) {
+  main{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.2rem;
+  }
+}
+
+/*OVERSCHRIJVEN LAYOUT DESKTOP*/
+@media (min-width: 1280px) {
+  main{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+  }
+}
