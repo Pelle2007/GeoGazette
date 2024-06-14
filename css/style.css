@@ -75,6 +75,10 @@ img{
   border-top: 8px solid white;
 }
 
+body header nav img .logo {
+  position: ;
+}
+
 .navbar {
   overflow: hidden;
 }
@@ -93,6 +97,7 @@ img{
   display: flex;
   justify-content: space-between;
   height: 100%; /*Michiel vraag 1: toegevoegd om iconen (hamburgen/darkmode) te centreren */
+  
 }
   
 .dropdown .dropbtn {
